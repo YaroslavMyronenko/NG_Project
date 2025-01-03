@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>resource/j.jpg</file>
+        <file>resource/sfu.png</file>
     </qresource>
 </RCC>
