@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>resource/j.jpg</file>
         <file>resource/sfu.png</file>
+        <file>PlayerLayout.qml</file>
     </qresource>
 </RCC>

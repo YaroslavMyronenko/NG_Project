@@ -2,6 +2,7 @@
 <RCC>
     <qresource prefix="/">
         <file alias="main.qml">../../main.qml</file>
-        <file alias="resource/images.jpg">../../resource/images.jpg</file>
+        <file alias="resource/j.jpg">../../resource/j.jpg</file>
+        <file alias="resource/sfu.png">../../resource/sfu.png</file>
     </qresource>
 </RCC>

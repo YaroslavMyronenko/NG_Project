@@ -2,14 +2,24 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts
 import QtQuick.Controls
-
+import QtMultimedia 6.5
 Window {
     width: 640
     height: 500
     visible: true
     title: qsTr("Player on QML")
 
-    Image {
+PlayerLayout {
+   anchors.fill: parent
+}
+
+
+}
+
+
+
+
+    /*Image {
         anchors.fill: parent
         source: "qrc:/resource/sfu.png"
     }
@@ -133,7 +143,23 @@ Window {
                     height: 100
                 }
             }
+        Rectangle {
+               x: 10; y: 10        // начальная позиция
+               width: 50; height: 50
+               color: "red"
 
-    }
+               Drag.active: dragArea.drag.active
+               Drag.hotSpot.x: 10
+               Drag.hotSpot.y: 10
+
+               MouseArea {
+                   id: dragArea
+                   anchors.fill: parent
+                   drag.target: parent
+               }
+           }*/
+
+
+
 
 
