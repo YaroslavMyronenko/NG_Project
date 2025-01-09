@@ -10,7 +10,7 @@ Window {
     title: qsTr("Player on QML")
 
 PlayerLayout {
-   anchors.fill: parent
+anchors.centerIn: parent
 }
 
 

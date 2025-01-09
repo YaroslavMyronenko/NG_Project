@@ -1,8 +1,8 @@
 <RCC>
     <qresource prefix="/">
+        <file>resource\Play.jpg</file>
+        <file>resource\fon.png</file>
         <file>main.qml</file>
-        <file>resource/j.jpg</file>
-        <file>resource/sfu.png</file>
         <file>PlayerLayout.qml</file>
     </qresource>
 </RCC>
