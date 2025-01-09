@@ -4,8 +4,11 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtMultimedia 6.5
 Window {
-    width: 640
-    height: 500
+    id: window
+    width: 500
+    height: 400
+    minimumWidth: 500
+    minimumHeight: 400
     visible: true
     title: qsTr("Player on QML")
 
@@ -13,8 +16,16 @@ PlayerLayout {
 anchors.centerIn: parent
 }
 
+Buttons {
+    anchors {
+        top: parent.top
+        horizontalCenter: parent.horizontalCenter
+        topMargin: parent.height * 0.3
+    }
+}
 
 }
+
 
 
 
