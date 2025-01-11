@@ -1,16 +1,28 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
+import QtQuick.Window 6.0
 import QtQuick.Layouts
-import QtQuick.Controls
+import QtQuick 6.0
+import QtQuick.Controls 6.0
 import QtMultimedia 6.5
+
 Window {
-    id: window
-    width: 500
-    height: 400
-    minimumWidth: 500
-    minimumHeight: 400
     visible: true
-    title: qsTr("Player on QML")
+    width: 600
+    height: 400
+    title: "QML Music Player"
+    minimumHeight: 400
+    minimumWidth: 600
+
+     AudioOutput {
+             id: audioOutput
+             volume: 0.7
+        }
+
+MediaPlayer {
+    id: player
+    source: "file:///C:/Users/Ярослав/Documents/My hom/Music/Lensko - Let's Go.mp3"
+    autoPlay: folse
+    audioOutput: audioOutput
+}
 
 PlayerLayout {
 anchors.centerIn: parent
@@ -22,6 +34,85 @@ Buttons {
         horizontalCenter: parent.horizontalCenter
         topMargin: parent.height * 0.3
     }
+}
+
+VolumeBar{
+    anchors {
+        right: parent.right
+        rightMargin: 170
+        top: parent.top
+        topMargin: 65
+    }
+}
+
+//Progress Bar
+Rectangle{
+    anchors {
+        top: parent.top
+        horizontalCenter: parent.horizontalCenter
+        topMargin: parent.height * 0.45
+    }
+    width: parent.width * 0.95
+    height: 70
+    border.color: "white"
+    border.width: 2
+    radius: 12
+    color: "grey"
+    Column{
+        spacing: 10
+        anchors.centerIn: parent
+        width: parent.width * 0.95
+        Slider {
+            id: progress
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width * 1
+            from: 0
+            to: player.duration
+            value: player.position
+            stepSize: 1000
+            onMoved: player.position = value
+            onValueChanged: {
+                if (pressed) {
+                    //player.pause();
+                    player.position = value;
+                }
+                //player.play()
+            }
+            Layout.fillWidth: true
+        }
+        Row{
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 5
+            Text {
+                text: formatTime(player.position)
+                font.pixelSize: 16
+                color: "white"
+            }
+            Text {
+                text: "/"
+                font.pixelSize: 16
+                color: "white"
+            }
+            Text {
+                text: formatTime(player.duration)
+                font.pixelSize: 16
+                color: "white"
+            }
+        }
+    }
+}
+
+
+
+
+
+function formatTime(milliseconds) {
+    let seconds = Math.floor(milliseconds / 1000);
+    let minutes = Math.floor(seconds / 60);
+    seconds = seconds % 60;
+
+    return (minutes < 10 ? "0" + minutes : minutes) + ":" +
+           (seconds < 10 ? "0" + seconds : seconds);
 }
 
 }
