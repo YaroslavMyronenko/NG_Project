@@ -10,5 +10,6 @@
         <file>PlayerLayout.qml</file>
         <file>Buttons.qml</file>
         <file>VolumeBar.qml</file>
+        <file>ProgressBar.qml</file>
     </qresource>
 </RCC>

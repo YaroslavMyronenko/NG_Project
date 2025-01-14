@@ -4,11 +4,25 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia 6.5
 
+Rectangle {
+    // anchors {
+    //     top: parent.top
+    //     horizontalCenter: parent.horizontalCenter
+    //     topMargin: parent.height * 0.5
+    // }
+    width: parent.width * 0.83
+    height: Math.min(window.height * 0.15, 100)
+    border.color: "#A0B3BA"
+    border.width: 2
+    radius: 20
+    color: "#32404B"
+
     Row{
-        spacing: 40
+        spacing: window.height * 0.1
+        anchors.centerIn: parent
         Button {
             id: backward
-            height: 60
+            height: Math.min(window.height * 0.12, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -20,8 +34,8 @@ import QtMultimedia 6.5
 
         Button {
             id: stop
-            height: 60
-            width: height
+            height: Math.min(window.height * 0.12, 70)/*window.height * 0.12*/ //60
+            width: height/*Math.min(height, 70)*/
             hoverEnabled: false
             background: Image {
                 source: "qrc:/resource/Stop.png"
@@ -32,7 +46,7 @@ import QtMultimedia 6.5
 
         Button {
             id: play
-            height: 60
+            height: Math.min(window.height * 0.12, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -44,7 +58,7 @@ import QtMultimedia 6.5
 
         Button {
             id: pause
-            height: 60
+            height: Math.min(window.height * 0.12, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -56,7 +70,7 @@ import QtMultimedia 6.5
 
         Button {
             id: forward
-            height: 60
+            height: Math.min(window.height * 0.12, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -66,3 +80,4 @@ import QtMultimedia 6.5
             onClicked: player.seek(player.position + 5000)
         }
     }
+}

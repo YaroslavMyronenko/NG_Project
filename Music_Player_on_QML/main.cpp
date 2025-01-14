@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QMediaPlayer>
 #include "player_buttons.h"
 
 int main(int argc, char *argv[])
