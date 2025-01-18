@@ -29,7 +29,7 @@ Rectangle {
                 source: "qrc:/resource/Back.png"
                 fillMode: Image.PreserveAspectFit
             }
-            onClicked: player.position = value + 5000
+            onClicked: player.position = player.position - 5000;
         }
 
         Button {
@@ -53,7 +53,10 @@ Rectangle {
                 source: "qrc:/resource/Play.png"
                 fillMode: Image.PreserveAspectFit
             }
-            onClicked: player.play();
+            onClicked: {
+            player.play();
+            player.source = trackListModel.get(0).trackUrl;
+            }
         }
 
         Button {
@@ -77,7 +80,7 @@ Rectangle {
                 source: "qrc:/resource/Forward.png"
                 fillMode: Image.PreserveAspectFit
             }
-            onClicked: player.seek(player.position + 5000)
+            onClicked: player.position = player.position + 5000;
         }
     }
 }

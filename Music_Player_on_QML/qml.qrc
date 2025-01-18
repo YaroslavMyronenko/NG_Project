@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
+        <file>resource/plus.png</file>
         <file>resource/Back.png</file>
         <file>resource/Forward.png</file>
         <file>resource/Pause.png</file>
@@ -11,5 +12,6 @@
         <file>Buttons.qml</file>
         <file>VolumeBar.qml</file>
         <file>ProgressBar.qml</file>
+        <file>AddTrack.qml</file>
     </qresource>
 </RCC>
