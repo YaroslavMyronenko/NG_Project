@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
+        <file>resource/Backtrack.png</file>
+        <file>resource/Forwardtrack.png</file>
         <file>resource/plus.png</file>
         <file>resource/Back.png</file>
         <file>resource/Forward.png</file>

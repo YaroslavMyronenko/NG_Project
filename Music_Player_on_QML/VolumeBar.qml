@@ -3,8 +3,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia 6.5
 
-
-
 Column {
     spacing: 10
     Slider {
@@ -61,5 +59,4 @@ Column {
         font.pixelSize: Math.min(window.height * 0.03, 15)
         color: "white"
     }
-
 }

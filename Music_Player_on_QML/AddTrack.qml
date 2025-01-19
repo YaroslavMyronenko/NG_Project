@@ -3,6 +3,7 @@ import QtMultimedia 6.5
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Dialogs
+import Qt.labs.folderlistmodel 2.1
 
 Column {
     spacing: 5
@@ -24,24 +25,31 @@ Column {
         onAccepted: {
             if (fileDialog.selectedFiles.length > 0) {
                 var file = fileDialog.selectedFiles[0];
-                trackListModel.append({ "trackUrl": file });
+                trackListModel.append({ "trackUrl": file});
             }
         }
     }
 
     ListView {
+        spacing: 10
         width: parent.width * 0.8
-        height: 10
+        height: 20
         model: trackListModel
         delegate: Item {
             width: parent.width
             height: 10
             Row {
                 spacing: 10
+                anchors.verticalCenter: parent.verticalCenter
                 Text {
                     color: "white"
-                    font.pixelSize: 16
-                    text: model.trackUrl }
+                    font.pixelSize: 15
+                    text: model.trackUrl
+                }
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: playTrack(index)
             }
         }
     }

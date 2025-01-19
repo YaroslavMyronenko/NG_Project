@@ -5,11 +5,6 @@ import QtQuick.Layouts
 import QtMultimedia 6.5
 
 Rectangle {
-    // anchors {
-    //     top: parent.top
-    //     horizontalCenter: parent.horizontalCenter
-    //     topMargin: parent.height * 0.5
-    // }
     width: parent.width * 0.83
     height: Math.min(window.height * 0.15, 100)
     border.color: "#A0B3BA"
@@ -18,11 +13,25 @@ Rectangle {
     color: "#32404B"
 
     Row{
-        spacing: window.height * 0.1
+        spacing: Math.min(window.width * 0.035, 200)
         anchors.centerIn: parent
         Button {
+            id: backwardtrack
+            height: Math.min(window.width * 0.08, 70)
+            width: height
+            hoverEnabled: false
+            background: Image {
+                source: "qrc:/resource/Backtrack.png"
+                fillMode: Image.PreserveAspectFit
+            }
+            onClicked: if (currentIndex > 0)
+                playTrack(currentIndex - 1);
+
+        }
+
+        Button {
             id: backward
-            height: Math.min(window.height * 0.12, 70)
+            height: Math.min(window.width * 0.08, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -34,8 +43,8 @@ Rectangle {
 
         Button {
             id: stop
-            height: Math.min(window.height * 0.12, 70)/*window.height * 0.12*/ //60
-            width: height/*Math.min(height, 70)*/
+            height: Math.min(window.width * 0.08, 70)
+            width: height
             hoverEnabled: false
             background: Image {
                 source: "qrc:/resource/Stop.png"
@@ -46,7 +55,7 @@ Rectangle {
 
         Button {
             id: play
-            height: Math.min(window.height * 0.12, 70)
+            height: Math.min(window.width * 0.08, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -61,7 +70,7 @@ Rectangle {
 
         Button {
             id: pause
-            height: Math.min(window.height * 0.12, 70)
+            height: Math.min(window.width * 0.08, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -73,7 +82,7 @@ Rectangle {
 
         Button {
             id: forward
-            height: Math.min(window.height * 0.12, 70)
+            height: Math.min(window.width * 0.08, 70)
             width: height
             hoverEnabled: false
             background: Image {
@@ -81,6 +90,19 @@ Rectangle {
                 fillMode: Image.PreserveAspectFit
             }
             onClicked: player.position = player.position + 5000;
+        }
+
+        Button {
+            id: forwardtrack
+            height: Math.min(window.width * 0.08, 70)
+            width: height
+            hoverEnabled: false
+            background: Image {
+                source: "qrc:/resource/Forwardtrack.png"
+                fillMode: Image.PreserveAspectFit
+            }
+            onClicked: if (currentIndex < trackListModel.count - 1)
+                playTrack(currentIndex + 1);
         }
     }
 }
