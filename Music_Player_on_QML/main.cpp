@@ -1,8 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QMediaPlayer>
-#include "player_buttons.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,9 +7,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     QGuiApplication app(argc, argv);
+
     QQmlApplicationEngine engine;
-    Player_Buttons player_buttons;
-    engine.rootContext()->setContextProperty("player_buttons", &player_buttons);
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

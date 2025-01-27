@@ -1,7 +1,5 @@
-import QtQuick 6.0
+import QtQuick 2.15
 import QtQuick.Controls
-import QtQuick.Layouts
-import QtMultimedia 6.5
 
 Column {
     spacing: 10

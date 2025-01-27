@@ -1,8 +1,8 @@
 import QtQuick.Layouts
-import QtQuick 6.0
-import QtQuick.Controls 6.0
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtMultimedia 6.15
-import QtQuick.Window 6.0
+import QtQuick.Window 2.15
 
 
 Item{

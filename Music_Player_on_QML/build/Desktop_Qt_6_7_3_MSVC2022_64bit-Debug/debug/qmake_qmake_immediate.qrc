@@ -1,6 +1,0 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource prefix="/">
-<file alias="resource/j.jpg">C:/NG_Project/Music_Player_on_QML/resource/j.jpg</file>
-<file alias="resource/sfu.png">C:/NG_Project/Music_Player_on_QML/resource/sfu.png</file>
-</qresource>
-</RCC>
