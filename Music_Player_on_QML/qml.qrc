@@ -13,7 +13,7 @@
         <file>PlayerLayout.qml</file>
         <file>Buttons.qml</file>
         <file>VolumeBar.qml</file>
-        <file>ProgressBar.qml</file>
         <file>AddTrack.qml</file>
+        <file>Progress.qml</file>
     </qresource>
 </RCC>
